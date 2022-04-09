@@ -12,7 +12,7 @@ const FilmSelector = ({films, onFilmSelected}) => {
     })
 
     return (
-        <select defaultValue="" onChange={handleChange}>
+        <select defaultValue="" onChange={handleChange} class='selector'>
             <option value="" selected>Select a film</option>
             {options}
         </select>

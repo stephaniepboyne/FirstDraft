@@ -16,7 +16,6 @@ const FilmContainer = () => {
     }, [films])
 
     
-
     const getFilms = function() {
         fetch('https://ghibliapi.herokuapp.com/films')
         .then(response => response.json())
@@ -39,16 +38,36 @@ const FilmContainer = () => {
     }
 
 
+
         return (
-            <div>
-                <FilmSelector films={films} onFilmSelected={onFilmSelected} />
+            <>
+                <div class="container">
+                    <div><img src='https://www.sfweekly.com/wp-content/uploads/2017/01/film-redturtle.jpg'/></div>
+                    <div><img src='https://www.alternateending.com/wp-content/uploads/2019/12/fCUIuG7y4YKC3hofZ8wsj7zhCpR.jpg'/></div>
+                    <div><img src='https://cdn.flickeringmyth.com/wp-content/uploads/2017/08/spirited-away.jpg'/></div>
+                    <div><img src='https://s3.amazonaws.com/static.rogerebert.com/uploads/review/primary_image/reviews/only-yesterday-2016/OnlyYesterday_2016_1.jpg'/></div>
+                    <div><img src='https://dazedimg-dazedgroup.netdna-ssl.com/1185/azure/dazed-prod/1180/3/1183450.jpg'/></div>
+                    <div><img src='https://junkyardview.files.wordpress.com/2018/07/princessmononoke.jpg?w=640'/></div>
+                    <div><img src='https://cdn.onebauer.media/one/empire-tmdb/films/12429/images/akDpPae2zJXZhokzsAPgDyNwiwX.jpg?format=jpg&quality=80&width=960&height=540&ratio=16-9&resize=aspectfill'/></div>
+                    <div><img src='https://www.thetimes.co.uk/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fd6142db6-4081-11eb-83a7-25db7141c256.jpg?crop=2700%2C1519%2C0%2C11&resize=1200'/></div>
+                </div>
+                <div class='gallery'><h2>GALLERY</h2></div>
+                <div class='logo-container'>
+                    <div><img class='logo' src='https://cdn.worldvectorlogo.com/logos/studio-ghibli-logo.svg'/>
+                    </div>
+                </div>
+                <hr></hr>
+                <h3 tag='fave-title'>Favourites</h3>
+                     <div class='faves-container'>
+                     <ul>
+                        {favourites.map(movie => 
+                        movie.favourite === true? <li key={movie.id} onClick={() => onFilmClick(movie)}>{movie.title}</li> : null)} 
+                    </ul></div>
+                <hr></hr>
+                <div class='selector-container'><FilmSelector films={films} onFilmSelected={onFilmSelected}/></div>
                 {selectedFilm ? <FilmDetail selectedFilm={selectedFilm} handleFavourite={handleFavourite} favourites={favourites}/> : null}
-                <h3>Favourites</h3>
-                <ul>
-                    {favourites.map(movie => 
-                    movie.favourite === true? <li key={movie.id} onClick={() => onFilmClick(movie)}>{movie.title}</li> : null)} 
-                </ul>
-            </div> 
+                
+            </> 
 
         )
 
