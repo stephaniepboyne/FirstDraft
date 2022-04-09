@@ -15,9 +15,7 @@ const FilmContainer = () => {
         setFavourites(films)
     }, [films])
 
-    useEffect(() => {
-        setSelectedFilm(films)
-    }, [films])
+    
 
     const getFilms = function() {
         fetch('https://ghibliapi.herokuapp.com/films')
