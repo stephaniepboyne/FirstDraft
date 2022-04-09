@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import FilmDetail from '../components/FilmDetail';
 import FilmSelector from '../components/FilmSelector';
 
-
 const FilmContainer = () => {
     const [films, setFilms] = useState([]);
     const [selectedFilm, setSelectedFilm] = useState(null)
     const [favourites, setFavourites] = useState([])
+
     useEffect(() => {
         getFilms();
     }, [])
@@ -14,10 +14,6 @@ const FilmContainer = () => {
     useEffect(() => {
         setFavourites(films)
     }, [films])
-
-    
-
-    
 
     const getFilms = function() {
         fetch('https://ghibliapi.herokuapp.com/films')
@@ -33,31 +29,16 @@ const FilmContainer = () => {
         const newFavourite = favourites.map(movie => {
             return movie.id === id ? {...movie, favourite: !movie.favourite} : movie;
         });
-
         setFavourites(newFavourite)
     }
+
+  
 
         return (
             <div>
                 <FilmSelector films={films} onFilmSelected={onFilmSelected} />
-                {selectedFilm ? <FilmDetail selectedFilm={selectedFilm}/> : null}
-                <div>
-                    <h3>List</h3>
-                    <ul>
-                        {favourites.map((movie, i) => (
-                            <li key={i}>
-                                {movie.title}
-                                <button
-                                    onClick={() => {
-                                        handleFavourite(movie.id);
-                                    }}>
-                                        {movie.favourite === true ? "Remove from favourites" : "Add to favourites"}
-                                </button>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-
+                {selectedFilm ? <FilmDetail selectedFilm={selectedFilm} handleFavourite={handleFavourite} favourites={favourites}/> : null}
+                    
                 <h3>Favourites</h3>
                 <ul>
                     {favourites.map(movie => 

@@ -1,6 +1,11 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
-const FilmDetail = ({selectedFilm}) => {
+
+const FilmDetail = ({selectedFilm, handleFavourite}) => {
+    
+
+
+
     return (
         <div>
             <h3>{selectedFilm.title}</h3>
@@ -9,6 +14,12 @@ const FilmDetail = ({selectedFilm}) => {
             <p>{selectedFilm.release_date}</p>
             <p>{selectedFilm.description}</p>
             <img src={selectedFilm.movie_banner}/>
+            <button class="favebutton" 
+                onClick={() => {
+                    handleFavourite(selectedFilm.id);
+                    }}>
+                    Favourite
+            </button>
         </div>
     )
 }

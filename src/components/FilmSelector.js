@@ -20,4 +20,4 @@ const FilmSelector = ({films, onFilmSelected}) => {
 
 }
 
-export default FilmSelector;
+export default FilmSelector
