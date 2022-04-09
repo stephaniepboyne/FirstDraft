@@ -1,10 +1,8 @@
-import React, {useState, useEffect} from 'react';
-
+import React from 'react';
 
 const FilmDetail = ({selectedFilm, handleFavourite}) => {
     
-
-
+    
 
     return (
         <div>
@@ -18,7 +16,7 @@ const FilmDetail = ({selectedFilm, handleFavourite}) => {
                 onClick={() => {
                     handleFavourite(selectedFilm.id);
                     }}>
-                    Favourite
+                    Add / Remove from Favourites
             </button>
         </div>
     )

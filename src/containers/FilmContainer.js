@@ -15,6 +15,10 @@ const FilmContainer = () => {
         setFavourites(films)
     }, [films])
 
+    useEffect(() => {
+        setSelectedFilm(films)
+    }, [films])
+
     const getFilms = function() {
         fetch('https://ghibliapi.herokuapp.com/films')
         .then(response => response.json())
@@ -32,17 +36,19 @@ const FilmContainer = () => {
         setFavourites(newFavourite)
     }
 
-  
+    const onFilmClick = function(film) {
+        setSelectedFilm(film)
+    }
+
 
         return (
             <div>
                 <FilmSelector films={films} onFilmSelected={onFilmSelected} />
                 {selectedFilm ? <FilmDetail selectedFilm={selectedFilm} handleFavourite={handleFavourite} favourites={favourites}/> : null}
-                    
                 <h3>Favourites</h3>
                 <ul>
                     {favourites.map(movie => 
-                    movie.favourite === true? <li key={movie.id}>{movie.title}</li> : null)}
+                    movie.favourite === true? <li key={movie.id} onClick={() => onFilmClick(movie)}>{movie.title}</li> : null)} 
                 </ul>
             </div> 
 
