@@ -58,39 +58,48 @@ h1 {
   float: bottom;
 }
 
+
 .logo {
   height: 200px;
   width: auto;
   justify-content: center;
   margin-top: 50px;
-  flex: 33%;
 }
-
-
 
 .logo-container {
   display: flex;
-  justify-content: center;
+  justify-content: left;
+  margin-left: 150px;
+  margin-top: 0px;
 }
 
 .selector-container {
   display: flex;
-  justify-content: center;
+  justify-content: right;
+  margin-right: 150px;
+  margin-top: -150px;
 }
 
 .faves-container {
   display: flex;
   justify-content: center;
+  background-color: black;
+  height: 100px;
+  margin-top: 150px;
+  color: white;
+  bottom: 0px;
+  width: 100%;
+  position: fixed;
 }
 
 .faves-container > ul {
   list-style-type: none;
   text-align: center;
-  margin-left: -30px;
 }
 
 h3 {
   text-align: center;
+  color: black;
 
 }
 
@@ -108,20 +117,30 @@ h3 {
   font-weight: bolder;
 }
 
-.selector:hover {
-  border-color: rgb(250, 75, 75);
-}
-
 .gallery {
   margin-top: -150px;
   color: rgba(255, 255, 255, 0.792);
   font-size: x-large;
   font-family: 'Roboto', sans-serif;
   margin-left: 20px
-  
-  
-  
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+.banner {
+  height: 300px;
+  width: auto;
+}
+
+.fave-title {
+  color:white;
+}
+
+
+.halves {
+  margin-top: 20px;
+}
+
+.details {
+  margin: 100px
+}

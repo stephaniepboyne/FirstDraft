@@ -5,13 +5,13 @@ const FilmDetail = ({selectedFilm, handleFavourite}) => {
     
 
     return (
-        <div>
+        <div class="details">
             <h3>{selectedFilm.title}</h3>
             <p>{selectedFilm.original_title}</p>
             <p>{selectedFilm.director}</p>
             <p>{selectedFilm.release_date}</p>
             <p>{selectedFilm.description}</p>
-            <img src={selectedFilm.movie_banner}/>
+            <img src={selectedFilm.movie_banner} class="banner"/>
             <button class="favebutton" 
                 onClick={() => {
                     handleFavourite(selectedFilm.id);
