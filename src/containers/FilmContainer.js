@@ -48,6 +48,7 @@ const FilmContainer = () => {
                     <div><img src='https://junkyardview.files.wordpress.com/2018/07/princessmononoke.jpg?w=640'/></div>
                     <div><img src='https://cdn.onebauer.media/one/empire-tmdb/films/12429/images/akDpPae2zJXZhokzsAPgDyNwiwX.jpg?format=jpg&quality=80&width=960&height=540&ratio=16-9&resize=aspectfill'/></div>
                     <div><img src='https://www.thetimes.co.uk/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fd6142db6-4081-11eb-83a7-25db7141c256.jpg?crop=2700%2C1519%2C0%2C11&resize=1200'/></div>
+                    <div><img src={require('./totoro.jpg')}/></div>
                 </div>
                 <div class='gallery'><h2>GALLERY</h2></div><div class='halves'>
                 <div class='logo-container'>
@@ -62,13 +63,12 @@ const FilmContainer = () => {
                 <br></br>
                 <br></br>
                 <div class='faves-container'>
-                <h3 class='fave-title'>FAVOURITES</h3>
-                    <ul>
+                <div> <h3 class='fave-title'>FAVOURITES </h3></div>
                     {favourites.map(movie => 
-                    movie.favourite === true? <li key={movie.id} onClick={() => onFilmClick(movie)}>{movie.title}</li> : null)
+                    movie.favourite === true? <div key={movie.id} onClick={() => onFilmClick(movie)}>{movie.title}</div> : null)
                     } 
-                </ul></div>
-                </div> 
+                </div></div>
+                
 
         )
 

@@ -82,20 +82,21 @@ h1 {
 
 .faves-container {
   display: flex;
-  justify-content: center;
-  background-color: black;
+  justify-content: left;
+  background-color: rgb(12, 12, 12);
   height: 100px;
   margin-top: 150px;
   color: white;
   bottom: 0px;
   width: 100%;
   position: fixed;
+  display: flex;
+  overflow-x: auto;
+   -webkit-overflow-scrolling: touch;
+   -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 
-.faves-container > ul {
-  list-style-type: none;
-  text-align: center;
-}
+
 
 h3 {
   text-align: center;
@@ -104,17 +105,22 @@ h3 {
 }
 
 .selector {
-  background-color: rgb(250, 75, 75);
+  background-color: rgb(12, 12, 12);
   font-family: 'Roboto', sans-serif;
   font-size: large;
   margin: 10px;
   padding: 5px 10px;
   border-radius: 20px;
-  border-color: rgb(250, 75, 75);
+  border-color: rgb(12, 12, 12);
   border-width: 1px;
   text-align: center;
   color: white;
   font-weight: bolder;
+}
+
+.selector:hover {
+  background-color: rgb(27, 102, 182);
+  border-color: rgb(27, 102, 182);
 }
 
 .gallery {
@@ -128,12 +134,15 @@ h3 {
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 .banner {
-  height: 300px;
+  height: 250px;
   width: auto;
+  border-style:outset;
 }
 
 .fave-title {
   color:white;
+  font-family: 'Roboto', sans-serif;
+  font-size: x-large;
 }
 
 
@@ -142,5 +151,41 @@ h3 {
 }
 
 .details {
-  margin: 100px
+  margin-top: 100px;
+  margin-bottom: 100px;
+  text-align: center;
+  justify-content: 50%;
+  margin-left: 50px;
+  margin-right:93px;
+  font-family: 'Roboto', sans-serif;
+  
 }
+
+.details > h3 {
+  font-size: xx-large;
+
+}
+
+.favebutton {
+  font-size: xx-large;
+  background-color: white;
+  border: none;
+  color: rgb(231, 200, 0);
+}
+
+.favebutton:hover {
+  color: rgb(251, 233, 117);
+}
+
+.description {
+  text-align: left;
+}
+
+
+
+.faves-container > div {
+  flex: 20%;
+  justify-content: center;
+  width: 400px;
+}
+
