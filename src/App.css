@@ -80,23 +80,6 @@ h1 {
   margin-top: -150px;
 }
 
-.faves-container {
-  display: flex;
-  justify-content: left;
-  background-color: rgb(12, 12, 12);
-  height: 100px;
-  margin-top: 150px;
-  color: white;
-  bottom: 0px;
-  width: 100%;
-  position: fixed;
-  display: flex;
-  overflow-x: auto;
-   -webkit-overflow-scrolling: touch;
-   -ms-overflow-style: -ms-autohiding-scrollbar;
-}
-
-
 
 h3 {
   text-align: center;
@@ -152,13 +135,12 @@ h3 {
 
 .details {
   margin-top: 100px;
-  margin-bottom: 100px;
   text-align: center;
   justify-content: 50%;
   margin-left: 50px;
   margin-right:93px;
   font-family: 'Roboto', sans-serif;
-  
+  margin-bottom: 150px;
 }
 
 .details > h3 {
@@ -170,22 +152,46 @@ h3 {
   font-size: xx-large;
   background-color: white;
   border: none;
-  color: rgb(231, 200, 0);
+  color: rgb(255, 99, 167);
 }
 
 .favebutton:hover {
-  color: rgb(251, 233, 117);
+  color:rgb(255, 166, 204);
 }
 
 .description {
   text-align: left;
 }
 
+.faves-container {
+  display: flex;
+  justify-content: left;
+  background-color: rgb(12, 12, 12);
+  height: 100px;
+  margin-top: 50px;
+  color: white;
+  bottom: 0px;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  overflow-x: auto;
+   -webkit-overflow-scrolling: touch;
+   -ms-overflow-style: -ms-autohiding-scrollbar;
+}
 
 
 .faves-container > div {
-  flex: 20%;
-  justify-content: center;
-  width: 400px;
+  padding: 50px 20px;
+  height: 50px;
+  width: 100px;
+  object-fit: cover;
+  flex: 30%;
+  font-size: small;
 }
+.faves-container > div > h3 {
+  font-size: large;
+  color: white;
+}
+
+
 

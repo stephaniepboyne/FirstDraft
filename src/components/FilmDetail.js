@@ -12,7 +12,7 @@ const FilmDetail = ({selectedFilm, handleFavourite}) => {
                 onClick={() => {
                     handleFavourite(selectedFilm.id);
                     }}>
-                    ★
+                    ♥
             </button>
             <p>Directed by {selectedFilm.director}</p>
             <p>Released in {selectedFilm.release_date}</p>

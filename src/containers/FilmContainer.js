@@ -63,7 +63,7 @@ const FilmContainer = () => {
                 <br></br>
                 <br></br>
                 <div class='faves-container'>
-                <div> <h3 class='fave-title'>FAVOURITES </h3></div>
+                <div><h3>FAVOURITES</h3></div>
                     {favourites.map(movie => 
                     movie.favourite === true? <div key={movie.id} onClick={() => onFilmClick(movie)}>{movie.title}</div> : null)
                     } 
